@@ -54,3 +54,23 @@
   console.log('---------question 2--------');  
   console.log(res); // 1lq2z19kum
 }
+
+// 验证一个数是否是质数
+
+{
+  var isPrime = function(n) {
+      var divider = 2;
+      var limit = Math.sqrt(n);
+      while(divider<=limit){
+          if(n%divider == 0){
+              return false;
+          }
+          divider++;
+      }
+      return true;
+  }
+
+  console.log(isPrime(18)); // false
+  console.log(isPrime(20)); // false
+  console.log(isPrime(23)); // true
+}
