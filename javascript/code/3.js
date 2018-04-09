@@ -74,3 +74,24 @@
   console.log(isPrime(20)); // false
   console.log(isPrime(23)); // true
 }
+
+// 不使用临时变量的情况下交换两个数字
+{
+  // 使用差值比较
+  function swap1(a,b) {
+    b = b - a; // 两个的差值赋值给b
+    a = a + b; // a 在自身基础上增加两者差值即 变成了 b
+    b = a - b; // b 减去两者的差值 变成了 a
+    return [a, b];
+  }
+  console.log(swap1(1,2)); // [2, 1]
+
+  // 使用位运算比较
+  function swap2(a, b) {
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+    return [a, b];
+  }
+  console.log(swap2(20, 18)); // [18, 20]
+}
